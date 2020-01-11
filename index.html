@@ -17,81 +17,242 @@
 		<link rel="stylesheet" href="/public/css/main.css" />
 	</head>
 	<body>
-		<nav class="main-nav">
-			<div class="brand">BrownSkinBeauty</div>
-			<ul class="menu">
-				<li class="menu-item"><a href="#" class="menu-link">Accueil</a></li>
-				<li class="menu-item">
-					<a href="#" class="menu-link">Présentation</a>
-				</li>
-				<li class="menu-item"><a href="#" class="menu-link">Services</a></li>
-				<li class="menu-item">
-					<a href="#" class="menu-link">Témoignages</a>
-				</li>
-				<li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
-			</ul>
-		</nav>
-		<header class="header">
-			<p></p>
+		<div class="welcome"></div>
+		<header class="header" id="home">
+			<nav class="main-nav">
+				<div class="mobile-nav">
+					<div class="brand"><span>BrownSkin Beauty</span></div>
+					<div class="toggle-button__container">
+						<div id="dropdown-menu__toggle-button">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<ul class="mobile-menu">
+					<li class="menu-item" id="home">
+						<a href="#home" class="menu-link">Accueil</a>
+					</li>
+					<li class="menu-item">
+						<a href="#presentation" class="menu-link">Présentation</a>
+					</li>
+					<li class="menu-item">
+						<a href="#services" class="menu-link">Services</a>
+					</li>
+					<li class="menu-item">
+						<a href="#partners" class="menu-link">Partenaires</a>
+					</li>
+					<li class="menu-item">
+						<a href="#contact" class="menu-link">Contact</a>
+					</li>
+				</ul>
+				<!--  -->
+				<ul class="menu">
+					<li class="menu-item" id="home">
+						<a href="#home" class="menu-link">Accueil</a>
+					</li>
+					<li class="menu-item">
+						<a href="#presentation" class="menu-link">Présentation</a>
+					</li>
+					<li class="menu-item">
+						<a href="#services" class="menu-link">Services</a>
+					</li>
+					<li class="menu-item">
+						<a href="#partners" class="menu-link">Partenaires</a>
+					</li>
+					<li class="menu-item">
+						<a href="#contact" class="menu-link">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="header-headline">
+				<div class="cta">
+					<p>
+						BrownSkin Beauty souhaite
+						<br />
+						accompagner ses clients.
+					</p>
+					<div class="btns-container">
+						<a class="btn-inverse know-more" href="#presentation">
+							En savoir plus
+						</a>
+					</div>
+				</div>
+			</div>
 		</header>
 		<main class="main-content">
-			<section id="presentation"><h1>Lorem, ipsum dolor.</h1></section>
-			<section id="services"><h1>Lorem, ipsum dolor.</h1></section>
-			<section id="testimonials">
-				<h1>Ils nous ont fait confiance</h1>
-				<div class="carousel">
-					<div class="testimonial">
-						<img src="/public/images/customer-1.png" alt="" />
+			<section id="presentation">
+				<h1>Qui sommes-nous?</h1>
+				<h2>
+					BrownSkin Beauty souhaite accompagner ses clients
+				</h2>
+				<p>
+					particuliers ou professionnels en apportant une expertise cosmétique
+					pour les peaux noires, mates et métissées.
+				</p>
+				<ul class="presentation-list">
+					<li class="presentation-item">
+						<img src="/public/images/makeup-1.jpg" alt="" />
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
-							ipsam vel neque excepturi! Ratione, rerum sapiente! Praesentium
-							reprehenderit adipisci dolorum.
+							Pour lancer votre propre marque de cosmétique correspondant à vos
+							besoins et valeurs
 						</p>
-					</div>
-					<div class="testimonial">
-						<img src="/public/images/customer-2.png" alt="" />
+					</li>
+					<li class="presentation-item">
+						<img src="/public/images/makeup-2.jpg" alt="" />
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Molestiae, eaque! Dicta nihil assumenda iste odit pariatur sunt
-							cumque, omnis repellendus? Voluptates expedita eveniet eius
-							laborum!
+							Optimiser la création et le développement de vos produits
 						</p>
-					</div>
-					<div class="testimonial">
-						<img src="/public/images/customer-3.png" alt="" />
+					</li>
+					<li class="presentation-item">
+						<img src="/public/images/makeup-3.jpg" alt="" />
 						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-							Consectetur, dolorum!
+							Résoudre les problèmes de formulation, de réglementaire ou encore
+							de fabrications produit
 						</p>
-					</div>
+					</li>
+				</ul>
+				<p class="ceo">
+					<em
+						>Olivia PAUL : Ingénieure chimiste formée à l’ESCOM, spécialisée
+						dans le domaine de la cosmétique depuis plus de 10 ans et plus
+						particulièrement dans la formulation des produits pour les peaux
+						noires, mates et métissées.</em
+					>
+				</p>
+			</section>
+			<section id="services">
+				<h1>Nos services</h1>
+				<p>
+					Vous avez besoin d’aide dans le domaine de la cosmétique pour peaux
+					noires, mates et métissés, BrownSkin Beauty suit chaque étape de la
+					création de vos produits, du développement à la petite fabrication.
+				</p>
+				<div class="cards-container">
+					<article class="card">
+						<h1>Création et développement</h1>
+						<ul class="card-list">
+							<li class="card-item">
+								Élaboration du cahier des charges
+							</li>
+							<li class="card-item">
+								Choix et validation des galéniques et actifs
+							</li>
+							<li class="card-item">
+								Formulation à façon
+							</li>
+							<li class="card-item">
+								Suivi des stabilités et compatibilités
+							</li>
+							<li class="card-item">
+								Reformulation et amélioration de produits existants
+							</li>
+						</ul>
+					</article>
+					<article class="card">
+						<h1>Réglementaire</h1>
+						<ul class="card-list">
+							<li class="card-item">
+								Rédaction du DIP
+							</li>
+							<li class="card-item">
+								Notification électronique
+							</li>
+							<li class="card-item">
+								Lancement et gestion des différents tests (challenge test,
+								innocuité, …)
+							</li>
+							<li class="card-item">
+								Rédaction de la liste INCI
+							</li>
+						</ul>
+					</article>
+					<article class="card">
+						<h1>Transposition industrielle</h1>
+						<ul class="card-list">
+							<li class="card-item">
+								Participation à la rédaction du mode opératoire
+							</li>
+							<li class="card-item">
+								Supervision des 1ers lots industriels
+							</li>
+							<li class="card-item">
+								Fabrication et conditionnement de petits lots pilotes
+							</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+			<section id="partners">
+				<h1>Ils nous font confiance</h1>
+				<div class="partner-brands">
+					<img
+						src="/public/images/glennys-cosmetics.jpg"
+						alt="Glenny's Cosmetics"
+					/>
+					<img src="/public/images/elikya-beauty.jpg" alt="Elikya Beauty" />
 				</div>
 			</section>
 			<section id="contact">
-				<h1>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-					atque repudiandae animi, suscipit itaque at pariatur quas voluptate.
-				</h1>
-				<form
-					action="https://formspree.io/FORM_ID"
-					method="POST"
-					class="contact-form"
-				>
-					<label>
-						Nom:
-						<input type="text" name="name" />
-					</label>
-					<label>
-						Email:
-						<input type="email" name="_replyto" />
-					</label>
-					<label>
-						Message:
-						<textarea name="message"></textarea>
-					</label>
-					<button type="submit" class="btn">Envoyer</button>
-				</form>
+				<div class="contact-form__container">
+					<h1>
+						Nous contacter
+					</h1>
+					<form
+						action="https://formspree.io/mvokoeza"
+						method="POST"
+						class="contact-form"
+						id="contact-form"
+					>
+						<label>
+							Nom :
+							<input type="text" name="Nom" />
+						</label>
+						<label>
+							Prénom :
+							<input type="text" name="Prénom" />
+						</label>
+						<label>
+							Email :
+							<input type="email" name="Répondre à" />
+						</label>
+						<label>
+							Message :
+							<textarea name="Message"></textarea>
+						</label>
+						<button type="submit" class="btn" id="submit-button">
+							Envoyer
+						</button>
+						<p id="form-status"></p>
+					</form>
+				</div>
+				<div class="contact">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2635.5548340781424!2d2.3807895158186634!3d48.65663082284525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5df1d2683df6b%3A0x891bc3e3f712f5fd!2s15%20Rue%20de%20la%20Mare%20aux%20Moines%2C%2091350%20Grigny!5e0!3m2!1sfr!2sfr!4v1578704825575!5m2!1sfr!2sfr"
+						allowfullscreen=""
+						class="map"
+					></iframe>
+					<div class="brownskin-contact">
+						<p>Mme Olivia PAUL</p>
+						<address>
+							15 rue de la mare aux moines, <br />
+							91350 GRIGNY
+						</address>
+						<a href="tel:+33646359024" id="call"
+							><button class="btn">Appeler</button></a
+						>
+						<p id="tel">+33 (0)6 46 35 90 24</p>
+					</div>
+				</div>
 			</section>
 		</main>
-		<footer>&copy copyright 2019</footer>
+		<footer>
+			<span>&copy 2020 BrownSkin Beauty</span><span class="dash">-</span>
+			<a href="#">Mentions Légales</a>
+		</footer>
 	</body>
 </html>
