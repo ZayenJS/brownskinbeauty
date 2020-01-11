@@ -163,8 +163,8 @@ ul {
 
 header {
 	grid-area: header;
-	background: url("/public/images/header-bg.png") no-repeat,
-		darken($main-color, 5%);
+	// background: url("/public/images/header-bg.png") no-repeat,
+	// 	darken($main-color, 5%);
 	background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
 		darken($main-color, 5%);
 	background-size: cover;

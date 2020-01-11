@@ -165,7 +165,6 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
-  background: url("/public/images/header-bg.png") no-repeat, #0c0701;
   background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat, #0c0701;
   background-size: cover;
   background-position: 55% 30%;
