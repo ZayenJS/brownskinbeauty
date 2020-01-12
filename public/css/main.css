@@ -138,7 +138,7 @@ ul {
 
 @media (min-width: 992px) {
   .welcome {
-    background: url("/public/images/header-bg.png") no-repeat, #0c0701;
+    background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat, #0c0701;
     background-size: cover;
     background-position: 55% 30%;
     background-attachment: fixed;
@@ -169,7 +169,7 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
-  background: url("/public/images/header-bg.png") no-repeat, #0c0701;
+  background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat, #0c0701;
   background-size: cover;
   background-position: 55% 30%;
   background-attachment: fixed;
@@ -1214,7 +1214,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  background: url("/public/images/contact-bg.png");
+  background: url("/brownskinbeauty/public/images/contact-bg.png");
   background-size: cover;
   background-position: 40% 0%;
   height: 45rem;

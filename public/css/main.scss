@@ -142,10 +142,10 @@ ul {
 
 .welcome {
 	@include lg {
-		background: url("/public/images/header-bg.png") no-repeat,
+		// background: url("/public/images/header-bg.png") no-repeat,
+		// 	darken($main-color, 5%);
+		background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
 			darken($main-color, 5%);
-		// background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
-		// darken($main-color, 5%);
 		background-size: cover;
 		background-position: 55% 30%;
 		background-attachment: fixed;
@@ -175,10 +175,10 @@ ul {
 
 header {
 	grid-area: header;
-	background: url("/public/images/header-bg.png") no-repeat,
+	// background: url("/public/images/header-bg.png") no-repeat,
+	// 	darken($main-color, 5%);
+	background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
 		darken($main-color, 5%);
-	// background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
-	// // darken($main-color, 5%);
 	background-size: cover;
 	background-position: 55% 30%;
 	background-attachment: fixed;
@@ -872,8 +872,8 @@ header {
 
 	.contact-form__container {
 		@include flex(center, center, column, nowrap);
-		background: url("/public/images/contact-bg.png");
-		// background: url("/brownskinbeauty/public/images/contact-bg.png");
+		// background: url("/public/images/contact-bg.png");
+		background: url("/brownskinbeauty/public/images/contact-bg.png");
 		background-size: cover;
 		background-position: 40% 0%;
 		height: 45rem;
