@@ -22,6 +22,14 @@ body {
 	font-family: "Signika", sans-serif;
 	color: $main-color;
 	font-size: 1.2rem;
+	// //
+	// background: url("/public/images/header-bg.png") no-repeat,
+	// 	darken($main-color, 5%);
+	// // background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
+	// // darken($main-color, 5%);
+	// background-size: cover;
+	// background-position: 55% 30%;
+	// background-attachment: fixed;
 }
 
 ::selection {
@@ -133,11 +141,11 @@ ul {
 }
 
 .welcome {
-	@include xl {
-		// background: url("/public/images/header-bg.png") no-repeat,
-		// 	darken($main-color, 5%);
-		background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
+	@include lg {
+		background: url("/public/images/header-bg.png") no-repeat,
 			darken($main-color, 5%);
+		// background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
+		// darken($main-color, 5%);
 		background-size: cover;
 		background-position: 55% 30%;
 		background-attachment: fixed;
@@ -161,12 +169,16 @@ ul {
 	}
 }
 
+.active {
+	color: $secondary-color !important;
+}
+
 header {
 	grid-area: header;
-	// background: url("/public/images/header-bg.png") no-repeat,
-	// 	darken($main-color, 5%);
-	background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
+	background: url("/public/images/header-bg.png") no-repeat,
 		darken($main-color, 5%);
+	// background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
+	// // darken($main-color, 5%);
 	background-size: cover;
 	background-position: 55% 30%;
 	background-attachment: fixed;
@@ -178,7 +190,8 @@ header {
 	grid-template-areas:
 		"nav"
 		"headline";
-	grid-template-rows: fit-content(80px) auto;
+	grid-template-rows: 65px auto;
+
 	@include xl {
 		height: 100vh;
 		grid-template-rows: 100px auto;
@@ -186,19 +199,24 @@ header {
 }
 
 .main-nav {
+	@include flex(flex-start, space-between, column, nowrap);
 	grid-area: nav;
 	z-index: 10;
 	background-color: lighten($main-color, 20%);
-	@include flex(flex-start, space-between, column, nowrap);
-	padding: 1.5rem;
+	padding: 2rem 0.5rem;
 	height: fit-content;
-	min-height: 80px;
 	position: fixed;
 	right: 0;
 	left: 0;
+	transition: opacity 300ms ease-in-out;
+	-webkit-transition: opacity 300ms ease-in-out;
+	-moz-transition: opacity 300ms ease-in-out;
+	-ms-transition: opacity 300ms ease-in-out;
+	-o-transition: opacity 300ms ease-in-out;
 
-	@include xl {
+	@include lg {
 		@include flex(center, space-between, row, wrap);
+		opacity: 1;
 		background-color: transparent;
 		font-size: 1.8rem;
 		padding: 1rem 2rem;
@@ -211,20 +229,27 @@ header {
 	}
 
 	.mobile-nav {
+		height: 100%;
 		width: 100%;
 		@include flex(center, space-between, row, nowrap);
 
-		@include xl {
+		@include lg {
+			display: none;
 			width: 20%;
+		}
+		.brand {
+			display: block;
 		}
 	}
 
 	.brand {
+		display: none;
 		font-size: 2.25rem;
 		font-family: "Allura", cursive;
 		color: $secondary-color;
 
-		@include xl {
+		@include lg {
+			display: block;
 			font-size: 2.5rem;
 		}
 	}
@@ -342,9 +367,9 @@ header {
 	.mobile-menu {
 		display: none;
 		margin: 0;
-		padding-top: 1rem;
+		padding-top: 2rem;
 
-		@include xl {
+		@include lg {
 			display: none !important;
 		}
 
@@ -363,18 +388,27 @@ header {
 		display: none;
 		margin: 0;
 
-		@include xl {
+		@include lg {
 			@include flex(center, flex-end, row, wrap);
+			width: 70%;
+			font-size: 1.1rem;
+		}
+
+		@include xl {
 			width: 75%;
 			font-size: 1.2rem;
 		}
 	}
 
 	.menu-item {
-		padding: 0 0.5rem;
+		padding: 0;
 		margin: 0 0.5rem;
+
 		height: fit-content;
 		width: fit-content;
+		@include xl {
+			padding: 0 0.5rem;
+		}
 
 		.menu-link {
 			text-transform: uppercase;
@@ -432,19 +466,42 @@ header {
 .header-headline {
 	grid-area: headline;
 	position: relative;
+	display: flex;
+	justify-content: center;
 
 	.cta {
 		@include flex(center, space-between, column, nowrap);
 		position: absolute;
 		width: 100%;
-		bottom: 4rem;
+		bottom: 5rem;
 		height: 72.5%;
 
+		@include sm {
+			@include flex(center, space-between, row, nowrap);
+			top: 0rem;
+			height: 100%;
+		}
+
+		@include md {
+			@include flex(center, space-between, column, nowrap);
+			width: 75%;
+			top: initial;
+			left: initial;
+			height: 72.5%;
+		}
+
+		@include lg {
+			@include flex(center, space-between, column, nowrap);
+			width: 75%;
+			bottom: 8rem;
+			height: 80%;
+		}
+
 		@include xl {
+			@include flex(center, space-between, column, nowrap);
 			width: 40%;
-			top: 20rem;
 			left: 5rem;
-			bottom: initial;
+			bottom: 10rem;
 			height: initial;
 		}
 
@@ -454,18 +511,50 @@ header {
 			text-transform: uppercase;
 			padding: 0 2rem;
 
+			@include sm {
+				width: 40%;
+			}
+
+			@include md {
+				width: 100%;
+				font-size: 2rem;
+				letter-spacing: 8px;
+			}
+
+			@include lg {
+				text-align: center;
+			}
+
 			@include xl {
+				text-align: left;
+				width: 100%;
 				font-size: 3rem;
 				letter-spacing: 10px;
 			}
 		}
 
 		.btns-container {
-			@include flex(center, space-evenly, row, nowrap);
+			@include flex(center, center, row, nowrap);
 			width: 100%;
+
+			@include sm {
+				width: 30%;
+			}
+
+			@include md {
+				width: 100%;
+			}
 
 			.btn-inverse {
 				width: 50%;
+
+				@include sm {
+					width: 100%;
+				}
+
+				@include md {
+					width: 50%;
+				}
 
 				@include xl {
 					width: 40%;
@@ -577,6 +666,16 @@ header {
 				-moz-border-radius: 50%;
 				-ms-border-radius: 50%;
 				-o-border-radius: 50%;
+
+				@include sm {
+					height: 150px;
+					width: 150px;
+				}
+
+				@include md {
+					height: 200px;
+					width: 200px;
+				}
 			}
 
 			p {
@@ -629,9 +728,14 @@ header {
 		width: 100%;
 		height: fit-content;
 
+		@include md {
+			width: 70%;
+			padding: 2rem 0;
+			margin: auto;
+		}
+
 		@include xl {
 			@include flex(center, center, row, wrap);
-			padding: 2rem 0;
 			margin: auto;
 			width: 100%;
 		}
@@ -645,16 +749,28 @@ header {
 			background-color: lighten($main-color, 15%);
 			color: $secondary-color;
 			border: 1px solid $secondary-color;
-			min-height: 30rem;
-			height: 100%;
+			// min-height: 30rem;
+			height: fit-content;
 			box-shadow: $medium-box-shadow;
 
-			@include xl {
+			@include sm {
+				grid-template-rows: 4rem auto;
+				// min-height: 20rem;
+			}
+
+			@include md {
+				grid-template-rows: 6rem auto;
 				border-radius: 10px;
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
 				-ms-border-radius: 10px;
 				-o-border-radius: 10px;
+				// min-height: 25rem;
+				max-width: 35rem;
+			}
+
+			@include xl {
+				min-height: 29rem;
 				max-width: 23rem;
 				margin: 0;
 			}
@@ -673,6 +789,17 @@ header {
 				text-align: justify;
 				padding: 2rem 1rem;
 				margin: 0;
+
+				@include sm {
+					padding: 0 1rem;
+					justify-self: center;
+					font-size: 1.1rem;
+				}
+
+				@include md {
+					padding: 2rem 1rem;
+					font-size: 1.2rem;
+				}
 
 				@include xl {
 					margin: initial;
@@ -712,6 +839,14 @@ header {
 		height: 70%;
 		width: 75%;
 
+		@include sm {
+			width: 35%;
+		}
+
+		@include md {
+			width: 30%;
+		}
+
 		@include xl {
 			width: 60%;
 			@include flex(center, space-around, row, wrap);
@@ -737,8 +872,8 @@ header {
 
 	.contact-form__container {
 		@include flex(center, center, column, nowrap);
-		// background: url("/public/images/contact-bg.png");
-		background: url("/brownskinbeauty/public/images/contact-bg.png");
+		background: url("/public/images/contact-bg.png");
+		// background: url("/brownskinbeauty/public/images/contact-bg.png");
 		background-size: cover;
 		background-position: 40% 0%;
 		height: 45rem;
@@ -772,7 +907,7 @@ header {
 					outline: none;
 					margin: 0.5rem 0;
 					padding: 0.5rem;
-					width: 100%;
+					width: 90%;
 					border: 1px solid $main-color;
 					border-radius: 10px;
 					-webkit-border-radius: 10px;
@@ -784,6 +919,10 @@ header {
 					&:focus {
 						border: 1.5px solid darken($secondary-color, 40%);
 						box-shadow: $medium-box-shadow;
+					}
+
+					@include sm {
+						width: 100%;
 					}
 				}
 			}
