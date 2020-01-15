@@ -4,6 +4,22 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="BrownSkin Beauty accompagne ses clients particuliers et professionnels en apportant une expertise cosmétique pour les peaux noires, mates et métissées. Pour lancer votre marque de cosmétique , optimiser la création et développement de produits, résoudre les problèmes de formulation, réglementaire ou fabrication."
+		/>
+		<meta name="og:title" property="og:title" content="BrownSkin Beauty" />
+		<meta
+			name="og:description"
+			property="og:description"
+			content="BrownSkin Beauty accompagne ses clients particuliers et professionnels en apportant une expertise cosmétique pour les peaux noires, mates et métissées. Pour lancer votre marque de cosmétique , optimiser la création et développement de produits, résoudre les problèmes de formulation, réglementaire ou fabrication."
+		/>
+		<link rel="canonical" href="http://www.brownskinbeauty.fr/" />
+		<link
+			rel="icon"
+			href="/public/images/favicon.ico?v=2"
+			type="image/x-icon"
+		/>
 		<title>BrownSkin Beauty</title>
 		<!-- jQuery -->
 		<script
@@ -13,14 +29,17 @@
 			defer
 		></script>
 		<!-- Custom Files -->
-		<script src="/brownskinbeauty/public/js/index.js" defer></script>
-		<link rel="stylesheet" href="/brownskinbeauty/public/css/main.css" />
+		<script src="/public/js/index.min.js" defer></script>
+		<link rel="stylesheet" href="/public/css/main.min.css" />
 	</head>
 	<body>
 		<div class="welcome"></div>
+		<div class="backdrop"></div>
 		<header class="header" id="home">
 			<nav class="main-nav">
-				<div class="brand"><span>BrownSkin Beauty</span></div>
+				<div class="brand">
+					<span>BrownSkin Beauty</span>
+				</div>
 				<div class="mobile-nav">
 					<div class="brand"><span>BrownSkin Beauty</span></div>
 					<div class="toggle-button__container">
@@ -73,9 +92,7 @@
 			<div class="header-headline">
 				<div class="cta">
 					<p>
-						BrownSkin Beauty souhaite
-						<br />
-						accompagner ses clients.
+						Formulez vos envies...
 					</p>
 					<div class="btns-container">
 						<a class="btn-inverse know-more" href="#presentation">
@@ -97,20 +114,23 @@
 				</p>
 				<ul class="presentation-list">
 					<li class="presentation-item">
-						<img src="/brownskinbeauty/public/images/makeup-1.jpg" alt="" />
+						<img src="/public/images/makeup-1.jpg" alt="cosmétiques" />
 						<p>
 							Pour lancer votre propre marque de cosmétique correspondant à vos
 							besoins et valeurs
 						</p>
 					</li>
 					<li class="presentation-item">
-						<img src="/brownskinbeauty/public/images/makeup-2.jpg" alt="" />
+						<img src="/public/images/makeup-2.jpg" alt="maquillage" />
 						<p>
 							Optimiser la création et le développement de vos produits
 						</p>
 					</li>
 					<li class="presentation-item">
-						<img src="/brownskinbeauty/public/images/makeup-3.jpg" alt="" />
+						<img
+							src="/public/images/makeup-3.jpg"
+							alt="processus de fabrication cosmétique"
+						/>
 						<p>
 							Résoudre les problèmes de formulation, de réglementaire ou encore
 							de fabrications produit
@@ -192,13 +212,10 @@
 				<h1>Ils nous font confiance</h1>
 				<div class="partner-brands">
 					<img
-						src="/brownskinbeauty/public/images/glennys-cosmetics.jpg"
+						src="/public/images/glennys-cosmetics.jpg"
 						alt="Glenny's Cosmetics"
 					/>
-					<img
-						src="/brownskinbeauty/public/images/elikya-beauty.jpg"
-						alt="Elikya Beauty"
-					/>
+					<img src="/public/images/elikya-beauty.jpg" alt="Elikya Beauty" />
 				</div>
 			</section>
 			<section id="contact">
@@ -207,7 +224,7 @@
 						Nous contacter
 					</h1>
 					<form
-						action="https://formspree.io/mvokoeza"
+						action="https://formspree.io/xnqpjngo"
 						method="POST"
 						class="contact-form"
 						id="contact-form"

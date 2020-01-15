@@ -22,14 +22,12 @@ body {
 	font-family: "Signika", sans-serif;
 	color: $main-color;
 	font-size: 1.2rem;
-	// //
-	// background: url("/public/images/header-bg.png") no-repeat,
-	// 	darken($main-color, 5%);
-	// // background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
-	// // darken($main-color, 5%);
-	// background-size: cover;
-	// background-position: 55% 30%;
-	// background-attachment: fixed;
+	//
+	background: url("/public/images/header-bg.jpg") no-repeat,
+		darken($main-color, 5%);
+	background-size: cover;
+	background-position: 55% 30%;
+	background-attachment: fixed;
 }
 
 ::selection {
@@ -140,22 +138,6 @@ ul {
 	}
 }
 
-.welcome {
-	@include lg {
-		// background: url("/public/images/header-bg.png") no-repeat,
-		// 	darken($main-color, 5%);
-		background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
-			darken($main-color, 5%);
-		background-size: cover;
-		background-position: 55% 30%;
-		background-attachment: fixed;
-		position: fixed;
-		height: 100vh;
-		width: 100vw;
-		z-index: 100;
-	}
-}
-
 .scroll {
 	background-color: lighten($main-color, 20%) !important;
 }
@@ -177,11 +159,9 @@ header {
 	grid-area: header;
 	// background: url("/public/images/header-bg.png") no-repeat,
 	// 	darken($main-color, 5%);
-	background: url("/brownskinbeauty/public/images/header-bg.png") no-repeat,
-		darken($main-color, 5%);
-	background-size: cover;
-	background-position: 55% 30%;
-	background-attachment: fixed;
+	// background-size: cover;
+	// background-position: 55% 30%;
+	// background-attachment: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -501,7 +481,7 @@ header {
 			@include flex(center, space-between, column, nowrap);
 			width: 40%;
 			left: 5rem;
-			bottom: 10rem;
+			bottom: 15rem;
 			height: initial;
 		}
 
@@ -538,10 +518,12 @@ header {
 			width: 100%;
 
 			@include sm {
-				width: 30%;
+				width: 25%;
+				margin: 0 1rem;
 			}
 
 			@include md {
+				margin: 0;
 				width: 100%;
 			}
 
@@ -605,6 +587,7 @@ header {
 	grid-area: presentation;
 	@include flex(center, center, column, nowrap);
 	text-align: center;
+	background: rgba($secondary-color, 0.5);
 
 	h1 {
 		margin: 1rem auto 0rem;
@@ -707,6 +690,7 @@ header {
 	text-align: center;
 	border-top: 1px solid rgba($main-color, 0.1);
 	padding: 2rem 0;
+	background: rgba($secondary-color, 0.5);
 
 	h1 {
 		font-size: 2.2rem;
@@ -869,11 +853,11 @@ header {
 	grid-area: contact;
 	padding-top: 0;
 	padding: 0 0 2rem;
+	background: rgba($secondary-color, 0.5);
 
 	.contact-form__container {
 		@include flex(center, center, column, nowrap);
-		// background: url("/public/images/contact-bg.png");
-		background: url("/brownskinbeauty/public/images/contact-bg.png");
+		background: url("/public/images/contact-bg.jpg");
 		background-size: cover;
 		background-position: 40% 0%;
 		height: 45rem;
