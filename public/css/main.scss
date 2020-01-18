@@ -157,11 +157,6 @@ ul {
 
 header {
 	grid-area: header;
-	// background: url("/public/images/header-bg.png") no-repeat,
-	// 	darken($main-color, 5%);
-	// background-size: cover;
-	// background-position: 55% 30%;
-	// background-attachment: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
@@ -183,7 +178,8 @@ header {
 	grid-area: nav;
 	z-index: 10;
 	background-color: lighten($main-color, 20%);
-	padding: 2rem 0.5rem;
+	padding: 0 0.5rem;
+	min-height: 65px;
 	height: fit-content;
 	position: fixed;
 	right: 0;
@@ -218,7 +214,12 @@ header {
 			width: 20%;
 		}
 		.brand {
-			display: block;
+			display: flex;
+
+			img {
+				width: 90px;
+				align-self: center;
+			}
 		}
 	}
 
@@ -229,8 +230,10 @@ header {
 		color: $secondary-color;
 
 		@include lg {
-			display: block;
+			display: flex;
 			font-size: 2.5rem;
+			height: 100%;
+			align-items: center;
 		}
 	}
 
@@ -347,7 +350,7 @@ header {
 	.mobile-menu {
 		display: none;
 		margin: 0;
-		padding-top: 2rem;
+		padding: 0.5rem 0;
 
 		@include lg {
 			display: none !important;
@@ -951,6 +954,11 @@ header {
 					display: block;
 				}
 			}
+
+			img {
+				padding-top: 0.5rem;
+				height: 80px;
+			}
 		}
 	}
 }
@@ -976,6 +984,13 @@ footer {
 
 	span {
 		padding: 0 0.5rem;
+	}
+
+	span.footer-brand {
+		padding: 0;
+		margin: 0;
+		font-family: "Allura", cursive;
+		font-size: 1.6rem;
 	}
 
 	.dash {

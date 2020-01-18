@@ -198,7 +198,8 @@ header {
   grid-area: nav;
   z-index: 10;
   background-color: #82450b;
-  padding: 2rem 0.5rem;
+  padding: 0 0.5rem;
+  min-height: 65px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -267,7 +268,16 @@ header {
 }
 
 .main-nav .mobile-nav .brand {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-nav .mobile-nav .brand img {
+  width: 90px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .main-nav .brand {
@@ -279,8 +289,14 @@ header {
 
 @media (min-width: 992px) {
   .main-nav .brand {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     font-size: 2.5rem;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -384,7 +400,7 @@ header {
 .main-nav .mobile-menu {
   display: none;
   margin: 0;
-  padding-top: 2rem;
+  padding: 0.5rem 0;
 }
 
 @media (min-width: 992px) {
@@ -1350,6 +1366,11 @@ header {
   }
 }
 
+#contact .contact .brownskin-contact img {
+  padding-top: 0.5rem;
+  height: 80px;
+}
+
 .succes {
   color: green;
 }
@@ -1400,6 +1421,13 @@ footer {
 
 footer span {
   padding: 0 0.5rem;
+}
+
+footer span.footer-brand {
+  padding: 0;
+  margin: 0;
+  font-family: "Allura", cursive;
+  font-size: 1.6rem;
 }
 
 footer .dash {

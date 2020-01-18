@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-156091955-1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "UA-156091955-1");
+		</script>
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -17,7 +32,7 @@
 		<link rel="canonical" href="http://www.brownskinbeauty.fr/" />
 		<link
 			rel="icon"
-			href="/brownskinbeauty/public/images/favicon.ico?v=2"
+			href="/public/images/favicon.ico?v=1"
 			type="image/x-icon"
 		/>
 		<title>BrownSkin Beauty</title>
@@ -29,8 +44,8 @@
 			defer
 		></script>
 		<!-- Custom Files -->
-		<script src="/brownskinbeauty/public/js/index.min.js" defer></script>
-		<link rel="stylesheet" href="/brownskinbeauty/public/css/main.min.css" />
+		<script src="/public/js/index.min.js" defer></script>
+		<link rel="stylesheet" href="/public/css/main.css" />
 	</head>
 	<body>
 		<div class="welcome"></div>
@@ -38,10 +53,12 @@
 		<header class="header" id="home">
 			<nav class="main-nav">
 				<div class="brand">
-					<span>BrownSkin Beauty</span>
+					<span>Brownskin Beauty</span>
 				</div>
 				<div class="mobile-nav">
-					<div class="brand"><span>BrownSkin Beauty</span></div>
+					<div class="brand">
+						<img src="/public/images/logo.png" />
+					</div>
 					<div class="toggle-button__container">
 						<div id="dropdown-menu__toggle-button">
 							<span></span>
@@ -114,27 +131,21 @@
 				</p>
 				<ul class="presentation-list">
 					<li class="presentation-item">
-						<img
-							src="/brownskinbeauty/public/images/makeup-1.jpg"
-							alt="cosmétiques"
-						/>
+						<img src="/public/images/makeup-1.jpg" alt="cosmétiques" />
 						<p>
 							Pour lancer votre propre marque de cosmétique correspondant à vos
 							besoins et valeurs
 						</p>
 					</li>
 					<li class="presentation-item">
-						<img
-							src="/brownskinbeauty/public/images/makeup-2.jpg"
-							alt="maquillage"
-						/>
+						<img src="/public/images/makeup-2.jpg" alt="maquillage" />
 						<p>
 							Optimiser la création et le développement de vos produits
 						</p>
 					</li>
 					<li class="presentation-item">
 						<img
-							src="/brownskinbeauty/public/images/makeup-3.jpg"
+							src="/public/images/makeup-3.jpg"
 							alt="processus de fabrication cosmétique"
 						/>
 						<p>
@@ -218,13 +229,10 @@
 				<h1>Ils nous font confiance</h1>
 				<div class="partner-brands">
 					<img
-						src="/brownskinbeauty/public/images/glennys-cosmetics.jpg"
+						src="/public/images/glennys-cosmetics.jpg"
 						alt="Glenny's Cosmetics"
 					/>
-					<img
-						src="/brownskinbeauty/public/images/elikya-beauty.jpg"
-						alt="Elikya Beauty"
-					/>
+					<img src="/public/images/elikya-beauty.jpg" alt="Elikya Beauty" />
 				</div>
 			</section>
 			<section id="contact">
@@ -276,13 +284,13 @@
 							><button class="btn">Appeler</button></a
 						>
 						<p id="tel">+33 (0)6 46 35 90 24</p>
+						<img src="/public/images/logo-brand.png" />
 					</div>
 				</div>
 			</section>
 		</main>
 		<footer>
-			<span>&copy 2020 BrownSkin Beauty</span><span class="dash">-</span>
-			<a href="#">Mentions Légales</a>
+			<span>&copy 2020 <span class="footer-brand">BrownSkin Beauty</span></span>
 		</footer>
 	</body>
 </html>
