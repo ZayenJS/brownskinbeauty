@@ -23,7 +23,7 @@ body {
 	color: $main-color;
 	font-size: 1.2rem;
 	//
-	background: url("/public/images/header-bg.jpg") no-repeat,
+	background: url("/brownskinbeauty/public/images/header-bg.jpg") no-repeat,
 		darken($main-color, 5%);
 	background-size: cover;
 	background-position: 55% 30%;
@@ -860,7 +860,7 @@ header {
 
 	.contact-form__container {
 		@include flex(center, center, column, nowrap);
-		background: url("/public/images/contact-bg.jpg");
+		background: url("/brownskinbeauty/public/images/contact-bg.jpg");
 		background-size: cover;
 		background-position: 40% 0%;
 		height: 45rem;
