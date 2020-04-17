@@ -1,0 +1,45 @@
+@import "../../../../variables.scss";
+
+.ListItem {
+	@include flex(center, space-between, column, nowrap);
+	width: 100%;
+	margin: 1rem 0 2rem;
+
+	@include xl {
+		margin: initial;
+		width: 25%;
+		height: 100%;
+		min-height: 100%;
+	}
+
+	img {
+		height: 200px;
+		width: 200px;
+		margin: 1rem 0;
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+
+		@include sm {
+			height: 150px;
+			width: 150px;
+		}
+
+		@include md {
+			height: 200px;
+			width: 200px;
+		}
+	}
+
+	p {
+		margin: 1rem;
+		text-align: center;
+		width: 100%;
+
+		@include xl {
+			margin: 0;
+		}
+	}
+}

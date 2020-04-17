@@ -1,0 +1,43 @@
+@import "../../variables.scss";
+
+.Services {
+	grid-area: services;
+	text-align: center;
+	border-top: 1px solid rgba($main-color, 0.1);
+	padding: 2rem 0;
+	background: rgba($secondary-color, 0.5);
+
+	h2 {
+		font-weight: bold;
+		font-size: 2.2rem;
+		width: 60%;
+		margin: auto;
+	}
+
+	p {
+		margin: 0.5rem auto;
+		padding: 0 1rem;
+
+		@include xl {
+			width: 60%;
+		}
+	}
+
+	.CardContainer {
+		@include flex(center, space-between, column, nowrap);
+		width: 100%;
+		height: fit-content;
+
+		@include md {
+			width: 70%;
+			padding: 2rem 0;
+			margin: auto;
+		}
+
+		@include xl {
+			@include flex(center, center, row, wrap);
+			margin: auto;
+			width: 100%;
+		}
+	}
+}

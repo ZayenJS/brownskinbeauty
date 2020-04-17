@@ -1,0 +1,48 @@
+@import "../../../variables.scss";
+
+.Footer {
+	grid-area: footer;
+	@include flex(center, center, column, nowrap);
+	padding: 1rem;
+	color: white;
+	background-color: black;
+
+	@include xl {
+		@include flex(center, center, row, wrap);
+	}
+
+	span {
+		padding: 0 0.5rem;
+	}
+
+	span.Brand {
+		padding: 0;
+		margin: 0;
+		font-family: "Allura", cursive;
+		font-size: 1.6rem;
+	}
+
+	.Dash {
+		display: none;
+
+		@include xl {
+			display: inline;
+		}
+	}
+
+	a {
+		padding: 0 0.5rem;
+		text-decoration: none;
+		color: white;
+
+		&:hover,
+		&:active {
+			color: lighten($main-color, 20%);
+		}
+	}
+
+	span,
+	a {
+		margin: 0.3rem 0;
+	}
+}

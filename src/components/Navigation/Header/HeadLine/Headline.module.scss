@@ -1,0 +1,90 @@
+@import "../../../../variables.scss";
+
+.Headline {
+	grid-area: headline;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	line-height: 1.25;
+
+	.Cta {
+		@include flex(center, space-between, column, nowrap);
+		position: absolute;
+		width: 100%;
+		bottom: 5rem;
+		height: 72.5%;
+
+		@include sm {
+			@include flex(center, space-between, row, nowrap);
+			top: 0rem;
+			height: 100%;
+		}
+
+		@include md {
+			@include flex(center, space-between, column, nowrap);
+			width: 75%;
+			top: initial;
+			left: initial;
+			height: 72.5%;
+		}
+
+		@include lg {
+			@include flex(center, space-between, column, nowrap);
+			width: 75%;
+			bottom: 8rem;
+			height: 80%;
+		}
+
+		@include xl {
+			@include flex(center, space-between, column, nowrap);
+			width: 40%;
+			left: 5rem;
+			bottom: 15rem;
+			height: initial;
+		}
+
+		p {
+			margin: 3rem 0;
+			color: $secondary-color;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			padding: 0 2rem;
+
+			@include sm {
+				width: 40%;
+			}
+
+			@include md {
+				width: 100%;
+				font-size: 2rem;
+				letter-spacing: 8px;
+			}
+
+			@include lg {
+				text-align: center;
+			}
+
+			@include xl {
+				text-align: left;
+				width: 100%;
+				font-size: 3rem;
+				letter-spacing: 10px;
+			}
+		}
+
+		.BtnContainer {
+			@include flex(center, center, row, nowrap);
+			width: 100%;
+
+			@include sm {
+				width: 25%;
+				margin: 0 1rem;
+			}
+
+			@include md {
+				margin: 0;
+				width: 100%;
+			}
+		}
+	}
+}

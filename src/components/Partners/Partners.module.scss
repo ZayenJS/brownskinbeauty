@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+.Partners {
+	grid-area: partners;
+	background-color: $main-color;
+	text-align: center;
+	height: fit-content;
+	color: $secondary-color;
+	font-size: 2rem;
+	@include flex(center, space-around, column, nowrap);
+
+	@include xl {
+		height: 25rem;
+	}
+
+	h2 {
+		margin: 0;
+		padding-bottom: 2rem;
+
+		@include xl {
+		}
+	}
+
+	.Brands {
+		height: 70%;
+		width: 75%;
+
+		@include sm {
+			width: 35%;
+		}
+
+		@include md {
+			width: 30%;
+		}
+
+		@include xl {
+			width: 60%;
+			@include flex(center, space-around, row, wrap);
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@import "../../variables.scss";
+
+.Contact {
+	grid-area: contact;
+	padding-top: 0;
+	padding: 0 0 2rem;
+	background: rgba($secondary-color, 0.5);
+
+	.FormContainer {
+		@include flex(center, center, column, nowrap);
+		background: url("../../assests/images/contact-bg.jpg");
+		background-size: cover;
+		background-position: 40% 0%;
+		height: 45rem;
+		padding: 1rem 0;
+
+		@include xl {
+			background-position: 50% 40%;
+		}
+	}
+
+	.contact {
+		height: 30rem;
+		@include flex(center, space-around, column, nowrap);
+		padding-top: 2rem;
+
+		.map {
+			height: 100%;
+			width: 100%;
+			border: none;
+		}
+		.brownskin-contact {
+			text-align: center;
+			padding: 2rem 2rem 0;
+
+			p {
+				margin: 0;
+			}
+
+			#call {
+				display: block;
+				text-decoration: none;
+				color: $secondary-color;
+				margin: 1rem auto;
+				width: 160px;
+				font-size: 1rem;
+				font-family: Arial, Helvetica, sans-serif;
+
+				@include xl {
+					display: none;
+				}
+			}
+
+			#tel {
+				display: none;
+
+				@include xl {
+					display: block;
+				}
+			}
+
+			img {
+				padding-top: 0.5rem;
+				height: 80px;
+			}
+		}
+	}
+}

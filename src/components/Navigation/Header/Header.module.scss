@@ -1,0 +1,18 @@
+@import "../../../variables.scss";
+
+.Header {
+	grid-area: header;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 100vh;
+	display: grid;
+	grid-template-areas:
+		"nav"
+		"headline";
+	grid-template-rows: 65px auto;
+
+	@include lg {
+		grid-template-rows: 100px auto;
+	}
+}

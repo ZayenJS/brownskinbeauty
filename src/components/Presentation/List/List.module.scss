@@ -1,0 +1,13 @@
+@import "../../../variables.scss";
+
+.List {
+	@include flex(center, space-around, column, nowrap);
+	margin: 2rem auto;
+	padding: 1rem;
+
+	@include xl {
+		@include flex(center, space-around, row, wrap);
+		width: 90%;
+		height: 20rem;
+	}
+}

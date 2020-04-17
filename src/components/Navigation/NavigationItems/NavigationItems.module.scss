@@ -1,0 +1,16 @@
+@import "../../../variables.scss";
+
+.NavigationItems {
+	display: none;
+
+	// @include lg {
+	//   width: 70%;
+	// 	font-size: 1.1rem;
+	// }
+
+	@include xl {
+		@include flex(center, flex-end, row, wrap);
+		width: 75%;
+		font-size: 1.2rem;
+	}
+}

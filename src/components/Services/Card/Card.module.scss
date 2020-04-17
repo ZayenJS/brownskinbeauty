@@ -1,0 +1,51 @@
+@import "../../../variables.scss";
+
+.Card {
+	display: grid;
+	grid-template-rows: 6rem auto;
+	width: 100%;
+	padding: 1rem;
+	margin: 2rem 0;
+	background-color: lighten($main-color, 15%);
+	color: $secondary-color;
+	border: 1px solid $secondary-color;
+	border-right: none;
+	border-left: none;
+	height: fit-content;
+	box-shadow: $medium-box-shadow;
+
+	@include sm {
+		grid-template-rows: 4rem auto;
+	}
+
+	@include md {
+		grid-template-rows: 6rem auto;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		max-width: 35rem;
+		border: 1px solid $secondary-color;
+	}
+
+	@include xl {
+		min-height: 29rem;
+		max-width: 23rem;
+		margin: 0;
+	}
+
+	h2 {
+		align-self: center;
+		text-align: center;
+		width: 100%;
+		color: darken($secondary-color, 25%);
+		margin: initial;
+	}
+}
+
+.Card:nth-child(2) {
+	@include xl {
+		margin: 0 2rem;
+	}
+}

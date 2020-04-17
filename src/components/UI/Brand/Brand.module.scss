@@ -1,0 +1,14 @@
+@import "../../../variables.scss";
+
+.Brand {
+	display: flex;
+	font-size: 2.25rem;
+	font-family: "Allura", cursive;
+	color: $secondary-color;
+
+	@include lg {
+		font-size: 2.5rem;
+		height: 100%;
+		align-items: center;
+	}
+}

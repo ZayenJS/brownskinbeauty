@@ -1,0 +1,40 @@
+@import "../../../../variables.scss";
+
+label {
+	@include flex(center, center, column, nowrap);
+	width: 100%;
+	margin: 0.5rem 0;
+
+	input {
+		height: 2rem;
+	}
+
+	textarea {
+		resize: none;
+		height: 10rem;
+	}
+
+	input,
+	textarea {
+		outline: none;
+		margin: 0.5rem 0;
+		padding: 0.5rem;
+		width: 90%;
+		border: 1px solid $main-color;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		box-shadow: $slight-box-shadow;
+
+		&:focus {
+			border: 1.5px solid darken($secondary-color, 40%);
+			box-shadow: $medium-box-shadow;
+		}
+
+		@include sm {
+			width: 100%;
+		}
+	}
+}
