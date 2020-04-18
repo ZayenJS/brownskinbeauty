@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import BrandCard from "./BrandCard/BrandCard";
 
-import glennys from "../../assests/images/glennys-cosmetics.jpg";
-import elikya from "../../assests/images/elikya-beauty.jpg";
+import glennys from "../../assets/images/glennys-cosmetics.jpg";
+import elikya from "../../assets/images/elikya-beauty.jpg";
 
 import classes from "./Partners.module.scss";
 

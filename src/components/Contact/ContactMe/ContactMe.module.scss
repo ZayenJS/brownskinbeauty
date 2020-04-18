@@ -1,0 +1,38 @@
+@import "../../../variables.scss";
+
+.ContactMe {
+	height: 30rem;
+	@include flex(center, space-around, column, nowrap);
+	padding-top: 2rem;
+
+	.BsbContact {
+		text-align: center;
+		padding: 2rem 2rem 0;
+
+		p {
+			margin: 0;
+		}
+
+		#Call {
+			display: block;
+			text-decoration: none;
+			color: $secondary-color;
+			margin: 1rem auto;
+			width: 160px;
+			font-size: 1rem;
+			font-family: Arial, Helvetica, sans-serif;
+
+			@include xl {
+				display: none;
+			}
+		}
+
+		#Tel {
+			display: none;
+
+			@include xl {
+				display: block;
+			}
+		}
+	}
+}

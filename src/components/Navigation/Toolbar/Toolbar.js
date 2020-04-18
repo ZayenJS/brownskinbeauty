@@ -1,7 +1,9 @@
 import React from "react";
+
 import Brand from "../../UI/Brand/Brand";
 import Hamburger from "../../UI/Hamburger/Hamburger";
 import NavigationItems from "../NavigationItems/NavigationItems";
+
 import classes from "./Toolbar.module.scss";
 
 const Toolbar = (props) => {

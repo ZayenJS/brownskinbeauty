@@ -9,7 +9,7 @@ const ContactForm = () => {
 		<form
 			action="https://formspree.io/xnqpjngo"
 			method="POST"
-			class={classes.ContactForm}
+			className={classes.ContactForm}
 			id="contact-form">
 			<FormField type="text" name="Nom" text="Nom : " />
 			<FormField type="text" name="Prénom" text="Prénom : " />

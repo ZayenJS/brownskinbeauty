@@ -3,20 +3,10 @@ import Header from "../../components/Navigation/Header/Header";
 import Footer from "../../components/Navigation/Footer/Footer";
 
 class Layout extends Component {
-	state = {
-		links: {
-			"#home": "Accueil",
-			"#presentation": "Présentation",
-			"#services": "Services",
-			"#partners": "Partenaires",
-			"#contact": "Contact",
-		},
-	};
-
 	render() {
 		return (
 			<Fragment>
-				<Header nav={this.state.links} />
+				<Header />
 				<main>{this.props.children}</main>
 				<Footer />
 			</Fragment>

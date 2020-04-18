@@ -8,6 +8,7 @@ const List = (props) => (
 		{props.items.map((item) => (
 			<ListItem
 				key={item.id}
+				item={item}
 				image={item.image}
 				alt={item.alt}
 				text={item.text}

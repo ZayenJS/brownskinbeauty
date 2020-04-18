@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import classes from "./Services.module.scss";
 
 import Card from "./Card/Card";
-import Zoom from "@react-reveal/Zoom";
 
 class Services extends Component {
 	state = {
@@ -17,7 +16,8 @@ class Services extends Component {
 					"Suivi des stabilités et compatibilités",
 					"Reformulation et amélioration de produits existants",
 				],
-				delay: 200,
+				delay: 250,
+				duration: 1000,
 			},
 			{
 				title: "Réglementaire",
@@ -28,6 +28,7 @@ class Services extends Component {
 					"Rédaction de la liste INCI",
 				],
 				delay: 0,
+				duration: 1000,
 			},
 			{
 				title: "Transposition industrielle",
@@ -36,7 +37,8 @@ class Services extends Component {
 					"Supervision des 1ers lots industriels",
 					"Fabrication et conditionnement de petits lots pilotes",
 				],
-				delay: 200,
+				delay: 250,
+				duration: 1000,
 			},
 		],
 	};
@@ -51,9 +53,7 @@ class Services extends Component {
 				</p>
 				<div className={classes.CardContainer}>
 					{this.state.cards.map((card, i) => (
-						<Zoom delay={card.delay}>
-							<Card key={i} card={card} />
-						</Zoom>
+						<Card key={i} card={card} />
 					))}
 				</div>
 			</section>
