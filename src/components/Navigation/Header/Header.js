@@ -8,11 +8,11 @@ import Headline from "./HeadLine/Headline";
 class Header extends Component {
 	state = {
 		links: {
-			home: "Accueil",
-			presentation: "Présentation",
-			services: "Services",
-			partners: "Partenaires",
-			contact: "Contact",
+			"#home": "Accueil",
+			"#presentation": "Présentation",
+			"#services": "Services",
+			"#partners": "Partenaires",
+			"#contact": "Contact",
 		},
 	};
 
