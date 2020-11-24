@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: fit-content(100vh) auto fit-content(80px);
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  font-family: 'Signika', sans-serif;
+  color: $main-color;
+  font-size: 1.2rem;
+  //
+  background: url('/public/images/header-bg.jpg') no-repeat, darken($main-color, 5%);
+  background-size: cover;
+  background-position: 55% 30%;
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: lighten($main-color, 20%);
+}
+
+section {
+  padding: 2rem 1rem;
+
+  @include xl {
+    padding: 2rem 0;
+  }
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.btn {
+  cursor: pointer;
+  width: 50%;
+  padding: 1rem;
+  color: $secondary-color;
+  border: 1px solid $main-color;
+  background-color: $main-color;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -moz-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -ms-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -o-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  text-transform: uppercase;
+  font-size: 1rem;
+  outline: none;
+
+  @include xl {
+    color: $main-color;
+    border: 1px solid $main-color;
+    background-color: transparent;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $main-color;
+    color: $secondary-color;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+  }
+}
+
+.btn-inverse {
+  cursor: pointer;
+  width: 50%;
+  padding: 1rem;
+  border: 1px solid $secondary-color;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -moz-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -ms-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  -o-transition: transform 250ms ease-in-out, color 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  text-transform: uppercase;
+  font-size: 1rem;
+  outline: none;
+
+  @include xl {
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
+    background-color: transparent;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $secondary-color;
+    color: $main-color;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+  }
+}
+
+.scroll {
+  background-color: lighten($main-color, 20%) !important;
+  box-shadow: 0 1px 5px $main-color;
+}
+
+.text-scroll {
+  color: $main-color !important;
+
+  &:hover,
+  &:active {
+    color: $secondary-color !important;
+  }
+}
+
+.active {
+  color: $secondary-color !important;
+
+  &:hover,
+  &:active {
+    color: $main-color !important;
+    @include lg {
+      color: lighten($main-color, 25%) !important;
+    }
+  }
+}
+
+.succes {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+header {
+  grid-area: header;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'nav'
+    'headline';
+  grid-template-rows: 65px auto;
+
+  @include lg {
+    grid-template-rows: 100px auto;
+  }
+}

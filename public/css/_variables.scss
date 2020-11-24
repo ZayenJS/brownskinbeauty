@@ -10,49 +10,56 @@ $screen-sm-min: 576px;
 $screen-md-min: 768px;
 
 // Tablets and small desktops
-$screen-lg-min: 992px;
+$screen-lg-min: 1004px;
 
 // Large tablets and desktops
 $screen-xl-min: 1200px;
 
 // Small devices
 @mixin sm {
-	@media (min-width: #{$screen-sm-min}) {
-		@content;
-	}
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
 }
 
 // Medium devices
 @mixin md {
-	@media (min-width: #{$screen-md-min}) {
-		@content;
-	}
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
 }
 
 // Large devices
 @mixin lg {
-	@media (min-width: #{$screen-lg-min}) {
-		@content;
-	}
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
 }
 
 // Extra large devices
 @mixin xl {
-	@media (min-width: #{$screen-xl-min}) {
-		@content;
-	}
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
 }
 
 // Custom devices
 @mixin rwd($screen) {
-	@media (min-width: $screen+"px") {
-		@content;
-	}
+  @media (min-width: $screen+'px') {
+    @content;
+  }
 }
 
 @mixin flex($align, $justify, $direction, $wrap) {
-	display: flex;
-	align-items: $align;
-	justify-content: $justify;
-	flex-flow: $direction $wrap;
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-flow: $direction $wrap;
+}
+
+%news-image {
+  max-height: 18rem;
+  max-width: 100%;
+  height: 14rem;
+  width: 14rem;
 }
