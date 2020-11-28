@@ -32,7 +32,7 @@ function scrollToPosition(el, header) {
 
   if (window.matchMedia('(max-width:1200px)').matches) {
     $('#dropdown-menu__toggle-button').removeClass('open');
-    $('.mobile-menu').slideUp('slow');
+    $('.menu').slideUp('slow');
   }
 
   return false;
@@ -113,7 +113,7 @@ const $elementsToHideMenu = [$('section'), $('.cta'), $('footer')];
 $($($elementsToHideMenu)).each((index, elements) => {
   $(elements).click(() => {
     $('#dropdown-menu__toggle-button').removeClass('open');
-    $('.mobile-menu').slideUp('slow');
+    $('.menu').slideUp('slow');
   });
 });
 

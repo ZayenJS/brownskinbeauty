@@ -1,5 +1,5 @@
 .main-nav {
-  @include flex(flex-start, space-between, column, nowrap);
+  @include flex(flex-start, center, column, nowrap);
   grid-area: nav;
   z-index: 10;
   background-color: lighten($main-color, 20%);

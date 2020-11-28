@@ -1,8 +1,8 @@
 #news .news__items article:nth-child(1) .img, #news .news__items article:nth-child(2) .img {
   max-height: 18rem;
-  max-width: 100%;
+  max-width: 14rem;
   height: 14rem;
-  width: 14rem;
+  width: 100%;
 }
 
 * {
@@ -217,9 +217,9 @@ header {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -1001,13 +1001,14 @@ header {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 2rem;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
   #services .cards-container {
     width: 70%;
     margin: auto;
+    padding: 2rem;
   }
 }
 
@@ -1188,6 +1189,7 @@ header {
 
 #partners .partner-brands img {
   height: 100%;
+  width: 100%;
   max-width: 15rem;
   height: 10rem;
   margin: 1rem 0;
@@ -1385,9 +1387,9 @@ header {
 
 #news .news__items article:nth-child(1) .img, #news .news__items article:nth-child(2) .img {
   max-height: 18rem;
-  max-width: 100%;
+  max-width: 14rem;
   height: 14rem;
-  width: 14rem;
+  width: 100%;
 }
 
 #news {
@@ -1451,6 +1453,7 @@ header {
   margin: 1rem 0;
   padding: 1rem;
   max-width: 20rem;
+  width: 100%;
   background-color: #6b3809;
   border: 1px solid transparent;
   border-radius: 10px;
