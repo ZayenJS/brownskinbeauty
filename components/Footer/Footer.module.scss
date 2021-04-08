@@ -1,0 +1,6 @@
+@import '../../styles/fragments/variables';
+
+.footer {
+  @include flex(center, center);
+  height: $footer-size;
+}

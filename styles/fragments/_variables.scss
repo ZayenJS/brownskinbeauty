@@ -1,0 +1,69 @@
+$main-color: #241303;
+$secondary-color: #f3c498;
+
+$header-size: 6rem;
+$footer-size: 5rem;
+
+$slight-box-shadow: 1px 1px 6px #888;
+$medium-box-shadow: 2px 2px 8px #555;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 1004px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+
+@mixin flex($align: stretch, $justify: flex-start, $direction: row, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-flow: $direction $wrap;
+}
+
+%news-image {
+  max-height: 18rem;
+  max-width: 14rem;
+  height: 14rem;
+  width: 100%;
+}

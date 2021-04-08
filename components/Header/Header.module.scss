@@ -1,0 +1,69 @@
+@import '../../styles/fragments/variables';
+@import '../../styles/fragments/placeholders';
+
+.header {
+  grid-area: header;
+  height: $header-size / 1.5;
+  background-color: lighten($main-color, 20%);
+
+  @include lg {
+    background-color: transparent;
+    height: $header-size;
+  }
+
+  &_content {
+    @include flex(center, space-between, row, wrap);
+    position: fixed;
+    height: inherit;
+    padding: 0 2rem;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+.brand {
+  display: none;
+  font-size: 2.25rem;
+  font-family: 'Allura', cursive;
+  color: $secondary-color;
+
+  @include lg {
+    display: flex;
+    font-size: 2.5rem;
+    height: 100%;
+    align-items: center;
+  }
+}
+
+.main_nav {
+  @include flex(flex-start, center, column, nowrap);
+  grid-area: nav;
+  z-index: 10;
+  padding: 0 0.5rem;
+  min-height: 65px;
+  height: fit-content;
+  transition: opacity 300ms ease-in-out;
+
+  @include lg {
+    opacity: 1;
+    padding: 0;
+    transition: background-color 300ms ease-in-out;
+  }
+
+  .mobile_nav {
+    height: 100%;
+    width: 100%;
+    @include flex(center, space-between, row, nowrap);
+
+    @include lg {
+      display: none;
+      width: 20%;
+    }
+    .brand {
+      display: flex;
+    }
+  }
+
+  // @import './hamburger';
+}

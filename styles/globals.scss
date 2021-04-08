@@ -1,0 +1,93 @@
+@import './fragments/reset';
+@import './fragments/variables';
+@import './fragments/placeholders';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: $header-size auto $footer-size;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  font-family: 'Signika', sans-serif;
+  color: $main-color;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  background: url('../public/images/header-bg.jpg') no-repeat, darken($main-color, 5%);
+  background-size: cover;
+  background-position: 55% 30%;
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: lighten($main-color, 20%);
+}
+
+section {
+  padding: 2rem 1rem;
+
+  @include xl {
+    padding: 2rem 0;
+  }
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.scroll {
+  background-color: lighten($main-color, 20%) !important;
+  box-shadow: 0 1px 5px $main-color;
+}
+
+.text-scroll {
+  color: $main-color !important;
+
+  &:hover,
+  &:active {
+    color: $secondary-color !important;
+  }
+}
+
+.active {
+  color: $secondary-color !important;
+
+  &:hover,
+  &:active {
+    color: $main-color !important;
+    @include lg {
+      color: lighten($main-color, 25%) !important;
+    }
+  }
+}
+
+.succes {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+main {
+  grid-area: main;
+  height: calc(100vh - 6rem - 5rem);
+}
+
+footer {
+  grid-area: footer;
+}

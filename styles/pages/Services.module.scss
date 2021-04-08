@@ -1,0 +1,44 @@
+@import '../fragments/variables';
+
+.services {
+  grid-area: services;
+  @include flex(center, center, column);
+  text-align: center;
+  height: 100%;
+  padding: 2rem;
+  background: rgba($secondary-color, 0.5);
+
+  h2 {
+    font-size: 2.2rem;
+    width: 60%;
+    margin: auto;
+  }
+
+  p {
+    margin: 0.5rem auto;
+    padding: 0 1rem;
+
+    @include xl {
+      width: 60%;
+    }
+  }
+
+  .cards_container {
+    @include flex(center, space-between, column, nowrap);
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+
+    @include md {
+      width: 70%;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    @include xl {
+      @include flex(center, center, row, wrap);
+      margin: auto;
+      width: 100%;
+    }
+  }
+}

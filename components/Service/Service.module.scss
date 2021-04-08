@@ -1,0 +1,78 @@
+@import '../../styles/fragments/variables';
+
+.card {
+  display: grid;
+  grid-template-rows: 6rem auto;
+  width: 100%;
+  max-width: 30rem;
+  padding: 1rem;
+  margin: 2rem 0;
+  background-color: lighten($main-color, 15%);
+  color: $secondary-color;
+  height: fit-content;
+  box-shadow: $medium-box-shadow;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: border 100ms ease-in;
+
+  &:hover {
+    border: 1px solid $secondary-color;
+  }
+
+  @include sm {
+    grid-template-rows: 4rem auto;
+  }
+
+  @include md {
+    grid-template-rows: 6rem auto;
+    max-width: 35rem;
+    border: 1px solid transparent;
+  }
+
+  @include xl {
+    min-height: 29rem;
+    max-width: 23rem;
+    margin: 0;
+  }
+
+  h2 {
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    color: darken($secondary-color, 25%);
+    margin: initial;
+  }
+
+  .list {
+    list-style: circle;
+    line-height: 2;
+    text-align: justify;
+    padding: 2rem 1rem;
+    margin: 0;
+
+    @include sm {
+      padding: 0 1rem;
+      justify-self: center;
+      font-size: 1.1rem;
+    }
+
+    @include md {
+      padding: 2rem 1rem;
+      font-size: 1.2rem;
+    }
+
+    @include xl {
+      margin: initial;
+    }
+  }
+}
+
+.card:nth-child(2) {
+  @include xl {
+    margin: 0 2rem;
+  }
+}

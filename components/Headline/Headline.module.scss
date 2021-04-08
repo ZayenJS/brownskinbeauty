@@ -1,0 +1,114 @@
+@import '../../styles/fragments/variables';
+@import '../../styles/fragments/placeholders';
+
+.container {
+  @include flex(flex-end, flex-start);
+  position: relative;
+  height: 100%;
+
+  .cta {
+    @include flex(center, flex-start, column, nowrap);
+    gap: 2rem;
+    margin-bottom: 15rem;
+    margin-left: 4rem;
+
+    p {
+      color: $secondary-color;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      padding: 0 2rem;
+
+      @include sm {
+        width: 40%;
+      }
+
+      @include md {
+        width: 100%;
+        font-size: 2rem;
+        letter-spacing: 8px;
+      }
+
+      @include lg {
+        text-align: center;
+      }
+
+      @include xl {
+        text-align: left;
+        width: 100%;
+        font-size: 3rem;
+        letter-spacing: 10px;
+      }
+    }
+
+    .btns_container {
+      @include flex(center, center, row, nowrap);
+      width: 100%;
+
+      @include sm {
+        width: 25%;
+        margin: 0 1rem;
+      }
+
+      @include md {
+        margin: 0;
+        width: 100%;
+      }
+
+      .btn-inverse {
+        width: 50%;
+
+        @include sm {
+          width: 100%;
+        }
+
+        @include md {
+          width: 50%;
+        }
+
+        @include xl {
+          width: 40%;
+        }
+        &:hover,
+        &:active {
+          transform: none;
+          -webkit-transform: none;
+          -moz-transform: none;
+          -ms-transform: none;
+          -o-transform: none;
+        }
+      }
+
+      .btn_inverse {
+        @extend %btn;
+        border: 1px solid $secondary-color;
+        background-color: $secondary-color;
+
+        @include xl {
+          color: $secondary-color;
+          background-color: transparent;
+        }
+
+        &:hover,
+        &:active {
+          background-color: $secondary-color;
+          color: $main-color;
+        }
+      }
+
+      .know_more {
+        text-align: center;
+        text-decoration: none;
+        color: $main-color;
+
+        @include xl {
+          color: $secondary-color;
+        }
+
+        &:hover,
+        &:active {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

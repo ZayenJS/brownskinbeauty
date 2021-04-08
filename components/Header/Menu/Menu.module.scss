@@ -1,0 +1,59 @@
+@import '../../../styles/fragments/variables';
+
+.menu {
+  display: none;
+  margin: 0;
+
+  @include lg {
+    @include flex(center, flex-end, row, wrap);
+    gap: 0 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  @include xl {
+    font-size: 1.2rem;
+  }
+}
+
+.item {
+  height: fit-content;
+  width: fit-content;
+
+  .link {
+    text-transform: uppercase;
+    display: inline-block;
+    height: fit-content;
+    width: 100%;
+    text-decoration: none;
+    //color: $main-color;
+    color: $secondary-color;
+    transition: color 200ms ease-in-out, text-shadow 200ms ease-in-out;
+
+    @include lg {
+      padding: 0.5rem;
+    }
+
+    &:after {
+      display: flex;
+      padding: 0.1rem 0;
+      content: '';
+      border-bottom: 2px solid lighten($main-color, 10%);
+      transform: scaleX(0);
+      transition: transform 200ms ease-in-out;
+      transform-origin: 0% 50%;
+    }
+
+    &:hover,
+    &:active {
+      color: $main-color;
+
+      @include lg {
+        color: lighten($main-color, 25%);
+      }
+    }
+
+    &:hover:after {
+      transform: scale(1);
+    }
+  }
+}
