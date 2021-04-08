@@ -1,6 +1,67 @@
 @import '../../styles/fragments/variables';
 
+@keyframes change-footer-background {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: black;
+  }
+}
+
 .footer {
-  @include flex(center, center);
+  @include flex(center, center, column, nowrap);
+  grid-area: footer;
+  padding: 1rem;
   height: $footer-size;
+  color: white;
+
+  @include xl {
+    @include flex(center, center, row, wrap);
+  }
+
+  &.original {
+    animation: change-footer-background 1 $between-page-anim-time reverse forwards;
+  }
+
+  &.alternate {
+    background-color: black;
+  }
+
+  &.changing_from_root {
+    animation: change-footer-background 1 $between-page-anim-time forwards;
+  }
+
+  span {
+    padding: 0 0.5rem;
+  }
+
+  .footer_brand {
+    font-family: 'Allura', cursive;
+    font-size: 1.6rem;
+  }
+
+  .dash {
+    display: none;
+
+    @include xl {
+      display: inline;
+    }
+  }
+
+  a {
+    padding: 0 0.5rem;
+    text-decoration: none;
+    color: white;
+
+    &:hover,
+    &:active {
+      color: lighten($main-color, 20%);
+    }
+  }
+
+  span,
+  a {
+    margin: 0.3rem 0;
+  }
 }

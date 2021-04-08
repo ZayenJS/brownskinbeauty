@@ -25,7 +25,6 @@
     height: fit-content;
     width: 100%;
     text-decoration: none;
-    //color: $main-color;
     color: $secondary-color;
     transition: color 200ms ease-in-out, text-shadow 200ms ease-in-out;
 
@@ -55,5 +54,45 @@
     &:hover:after {
       transform: scale(1);
     }
+
+    &.alternate {
+      color: $main-color;
+
+      &:hover,
+      &:active {
+        color: $main-color !important;
+
+        @include lg {
+          color: $secondary-color !important;
+        }
+      }
+    }
+
+    &.original {
+      animation: change-link-color 1 $between-page-anim-time reverse forwards;
+    }
+
+    &.changing_from_root {
+      // color: $main-color;
+      animation: change-link-color 1 $between-page-anim-time forwards;
+
+      &:hover,
+      &:active {
+        color: $main-color !important;
+
+        @include lg {
+          color: $secondary-color !important;
+        }
+      }
+    }
+  }
+}
+
+@keyframes change-link-color {
+  from {
+    color: $secondary-color;
+  }
+  to {
+    color: $main-color;
   }
 }

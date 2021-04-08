@@ -1,6 +1,15 @@
 @import '../../styles/fragments/variables';
 @import '../../styles/fragments/placeholders';
 
+@keyframes change-header-background {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: lighten($main-color, 20%);
+  }
+}
+
 .header {
   grid-area: header;
   height: $header-size / 1.5;
@@ -9,6 +18,18 @@
   @include lg {
     background-color: transparent;
     height: $header-size;
+  }
+
+  &.original {
+    animation: change-header-background 1 $between-page-anim-time reverse forwards;
+  }
+
+  &.alternate {
+    background-color: lighten($main-color, 20%);
+  }
+
+  &.changing_from_root {
+    animation: change-header-background 1 $between-page-anim-time forwards;
   }
 
   &_content {

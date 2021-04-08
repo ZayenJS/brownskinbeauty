@@ -1,9 +1,12 @@
 import Head from 'next/head';
+import { FC } from 'react';
 import Layout from '../components/Layout/Layout';
 import Service from '../components/Service/Service';
 import styles from '../styles/pages/Services.module.scss';
 
-const Services = () => {
+interface ServicesProps {}
+
+const Services: FC<ServicesProps> = () => {
   const services = [
     {
       name: 'Création et développement',
@@ -33,6 +36,7 @@ const Services = () => {
       ],
     },
   ];
+
   return (
     <Layout>
       <Head>
