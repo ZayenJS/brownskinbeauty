@@ -1,0 +1,73 @@
+@import '../../../styles/fragments/variables';
+
+/* Animated Hamburger */
+.container {
+  @include flex(center, space-between, column);
+  width: 2.25rem;
+  height: 1.75rem;
+  cursor: pointer;
+
+  @include lg {
+    display: none;
+  }
+
+  div {
+    @include flex();
+    height: 15%;
+    width: 100%;
+
+    span {
+      transition: all 250ms ease;
+      width: 50%;
+      background-color: $secondary-color;
+
+      &:nth-child(1) {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:nth-child(2) {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+
+  &.open {
+    div {
+      &:nth-child(1) {
+        span {
+          &:nth-child(1) {
+            transform: translate(3px, 6px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            transform: translate(-3px, 6px) rotate(-45deg);
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        span {
+          opacity: 0;
+
+          &:nth-child(1) {
+            transform: translate(-50%);
+          }
+          &:nth-child(2) {
+            transform: translate(50%);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        span {
+          &:nth-child(1) {
+            transform: translate(3px, -6px) rotate(-45deg);
+          }
+          &:nth-child(2) {
+            transform: translate(-3px, -6px) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}

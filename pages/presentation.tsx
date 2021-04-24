@@ -2,7 +2,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { FC } from 'react';
 import Layout from '../components/Layout/Layout';
+import ProductsOffer from '../components/ProductsOffer/ProductsOffer';
 import styles from '../styles/pages/Presentation.module.scss';
+
+import img1 from '../assets/images/makeup-1.jpg';
+import img2 from '../assets/images/makeup-2.jpg';
+import img3 from '../assets/images/makeup-3.jpg';
 
 interface PresentationProps {}
 
@@ -13,43 +18,46 @@ const Presentation: FC<PresentationProps> = () => (
     </Head>
     <Layout>
       <section className={styles.presentation}>
-        <h2>Qui sommes-nous?</h2>
-        <h3>BrownSkin Beauty souhaite accompagner ses clients</h3>
-        <p>
-          particuliers ou professionnels en apportant une expertise cosmétique pour les peaux
-          noires, mates et métissées.
-        </p>
-        <ul className={styles.list}>
-          <li className={styles.item}>
-            <Image src={'/images/makeup-1.jpg'} alt="cosmétiques" width="" height="" />
-            <p>
-              Pour lancer votre propre marque de cosmétique correspondant à vos besoins et valeurs
-            </p>
-          </li>
-          <li className={styles.item}>
-            <Image src={'/images/makeup-2.jpg'} alt="maquillage" width="" height="" />
-            <p>Optimiser la création et le développement de vos produits</p>
-          </li>
-          <li className={styles.item}>
-            <Image
-              src={'/images/makeup-3.jpg'}
-              alt="processus de fabrication cosmétique"
-              width=""
-              height=""
-            />
-            <p>
-              Résoudre les problèmes de formulation, de réglementaire ou encore de fabrications
-              produit
-            </p>
-          </li>
-        </ul>
-        <p className={styles.CEO}>
-          <em>
-            Olivia PAUL : Ingénieure chimiste formée à l’ESCOM, spécialisée dans le domaine de la
-            cosmétique depuis plus de 10 ans et plus particulièrement dans la formulation des
-            produits pour les peaux noires, mates et métissées.
-          </em>
-        </p>
+        <header>
+          <h2>Qui sommes-nous?</h2>
+          <h3>
+            BrownSkin Beauty vous accompagnera dansl'ensemble de vos projets cosmétique enapportant
+            son expertise des peaux noires, mateset métissées
+          </h3>
+        </header>
+        <div>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <Image src={img1} alt="cosmétiques" width="200" height="200" />
+              <p>
+                Vous souhaitez lancer votre propre marque decosmétiques répondant à vos besoins et
+                vosvaleurs
+              </p>
+            </li>
+            <li className={styles.item}>
+              <Image src={img2} alt="maquillage" width="200" height="200" />
+              <p>Optimiser la création et le développement de vos produits</p>
+            </li>
+            <li className={styles.item}>
+              <Image
+                src={img3}
+                alt="processus de fabrication cosmétique"
+                width="200"
+                height="200"
+              />
+              <p>Résoudre les problèmes de formulation, deréglementation ou encore de production</p>
+            </li>
+          </ul>
+          <ProductsOffer />
+          <p className={styles.CEO}>
+            <em>
+              Fort de plus de 10 années d'expériencedans le domaine de la cosmétique et plusde 8
+              années dans la formulation desproduits pour les peaux noires, je vousaccompagne pour
+              donner vie à tous vosprojets cosmétiques.A votre écoute, je m'adapterais à vosbesoins
+              spécifiques en vous offrant unservice sur mesure
+            </em>
+          </p>
+        </div>
       </section>
     </Layout>
   </>

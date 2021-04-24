@@ -1,7 +1,6 @@
 @import '../fragments/variables';
 
 .services {
-  grid-area: services;
   @include flex(center, center, column);
   text-align: center;
   height: 100%;

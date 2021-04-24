@@ -4,15 +4,22 @@
 @keyframes change-header-background {
   from {
     background-color: transparent;
+    box-shadow: none;
   }
   to {
     background-color: lighten($main-color, 20%);
+    box-shadow: $medium-box-shadow;
   }
 }
 
 .header {
   grid-area: header;
   height: $header-size / 1.5;
+  z-index: 500;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
   background-color: lighten($main-color, 20%);
 
   @include lg {
@@ -21,30 +28,32 @@
   }
 
   &.original {
-    animation: change-header-background 1 $between-page-anim-time reverse forwards;
+    @include lg {
+      animation: change-header-background 1 $between-page-anim-time reverse forwards;
+    }
   }
 
   &.alternate {
-    background-color: lighten($main-color, 20%);
+    @include lg {
+      background-color: lighten($main-color, 20%);
+      box-shadow: $medium-box-shadow;
+    }
   }
 
   &.changing_from_root {
-    animation: change-header-background 1 $between-page-anim-time forwards;
+    @include lg {
+      animation: change-header-background 1 $between-page-anim-time forwards;
+    }
   }
 
   &_content {
     @include flex(center, space-between, row, wrap);
-    position: fixed;
     height: inherit;
     padding: 0 2rem;
-    left: 0;
-    right: 0;
-    top: 0;
   }
 }
 
 .brand {
-  display: none;
   font-size: 2.25rem;
   font-family: 'Allura', cursive;
   color: $secondary-color;
@@ -59,32 +68,10 @@
 
 .main_nav {
   @include flex(flex-start, center, column, nowrap);
-  grid-area: nav;
   z-index: 10;
   padding: 0 0.5rem;
   min-height: 65px;
   height: fit-content;
-  transition: opacity 300ms ease-in-out;
-
-  @include lg {
-    opacity: 1;
-    padding: 0;
-    transition: background-color 300ms ease-in-out;
-  }
-
-  .mobile_nav {
-    height: 100%;
-    width: 100%;
-    @include flex(center, space-between, row, nowrap);
-
-    @include lg {
-      display: none;
-      width: 20%;
-    }
-    .brand {
-      display: flex;
-    }
-  }
 
   // @import './hamburger';
 }

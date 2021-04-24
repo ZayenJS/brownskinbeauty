@@ -1,15 +1,18 @@
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import styles from './Header.module.scss';
 import Head from 'next/head';
 import Menu from './Menu/Menu';
+import Burger from './Burger/Burger';
 
 import { State } from '../../store/reducers';
+import Link from 'next/link';
 
 interface HeaderProps {}
 
 const Header: FC<HeaderProps> = () => {
+  const [state, setState] = useState({ isBurgerOpen: false });
   const router = useRouter();
   const { prevPage } = useSelector((state: State) => state.pages);
 
@@ -36,25 +39,23 @@ const Header: FC<HeaderProps> = () => {
       <header className={[styles.header, className].join(' ')}>
         <div className={styles.header_content}>
           <div className={styles.brand}>
-            <h1>Brownskin Beauty</h1>
+            <Link href="/">
+              <a>
+                <h1>Brownskin Beauty</h1>
+              </a>
+            </Link>
           </div>
           <nav className={styles.main_nav}>
-            <div className={styles.mobile_nav}>
-              <div className={styles.brand}>
-                <h1>Brownskin Beauty</h1>
-              </div>
-              <div className={styles.toggle_button__container}>
-                <div onClick={() => ''}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-            </div>
-            <Menu />
+            <Burger
+              isOpen={state.isBurgerOpen}
+              toggle={() =>
+                setState((prevState) => ({ ...prevState, isBurgerOpen: !state.isBurgerOpen }))
+              }
+            />
+            <Menu
+              isOpen={state.isBurgerOpen}
+              close={() => setState((prevState) => ({ ...prevState, isBurgerOpen: false }))}
+            />
           </nav>
         </div>
       </header>

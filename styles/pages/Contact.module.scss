@@ -1,0 +1,172 @@
+@import '../fragments/variables';
+@import '../fragments/placeholders';
+
+.contact__container {
+  padding-top: 0;
+  padding-bottom: 2rem;
+  background: rgba($secondary-color, 0.5);
+  height: 100%;
+
+  h2 {
+    margin-top: 2rem;
+    font-size: 4rem;
+  }
+
+  .contact__form__container {
+    @include flex(center, center, column, nowrap);
+    background: url('../../assets/images/contact-bg.jpg');
+    background-size: cover;
+    background-position: 40% 0%;
+    height: 45rem;
+    padding: 1rem 0;
+
+    @include xl {
+      background-position: 50% 40%;
+    }
+
+    .contact__form {
+      @include flex(center, center, column, nowrap);
+      height: 100%;
+      width: 80%;
+      max-width: 25rem;
+      gap: 2rem;
+
+      div {
+        position: relative;
+        width: 100%;
+
+        label {
+          position: absolute;
+          font-size: 1rem;
+          color: $main-color;
+          left: 1rem;
+          transform: translateY(-50%);
+          transition: all 250ms ease;
+        }
+
+        input + label {
+          top: 50%;
+        }
+
+        input {
+          padding: 0.75rem;
+        }
+
+        textarea + label {
+          top: 80%;
+        }
+
+        textarea {
+          resize: none;
+          height: 10rem;
+          padding: 0.75rem;
+        }
+
+        input,
+        textarea {
+          outline: none;
+          width: 100%;
+          border: 3px solid transparent;
+          border-radius: 5px;
+          box-shadow: $slight-box-shadow;
+          transition: all 250ms ease;
+
+          &:focus,
+          &.not_empty {
+            border-bottom: 3px solid lighten($main-color, 20%);
+            box-shadow: $medium-box-shadow;
+
+            & + label {
+              text-shadow: 1px 1px $secondary-color;
+              color: $main-color;
+              font-size: 1rem;
+              top: -0.75rem;
+            }
+          }
+
+          @include sm {
+            width: 100%;
+          }
+        }
+
+        &.not_empty {
+          input,
+          textarea {
+            border-bottom: 3px solid lighten($main-color, 20%);
+            box-shadow: $medium-box-shadow;
+          }
+
+          label {
+            text-shadow: 1px 1px $secondary-color;
+            color: $main-color;
+            font-size: 1rem;
+            top: -0.75rem;
+          }
+        }
+      }
+
+      .btn {
+        @extend %btn;
+        margin: 0.3rem;
+      }
+
+      .btn_loading {
+        @extend .btn;
+        @include flex(center, center);
+
+        &:hover {
+          transform: scale(1);
+          background-color: transparent;
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  .contact {
+    height: 30rem;
+    @include flex(center, space-around, column, nowrap);
+    padding-top: 2rem;
+
+    .map {
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+    .brownskin_contact {
+      text-align: center;
+      padding: 2rem 2rem 0;
+
+      p {
+        margin: 0;
+      }
+
+      .call {
+        display: block;
+        text-decoration: none;
+        color: $secondary-color;
+        margin: 1rem auto;
+        width: 160px;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+
+        @include xl {
+          display: none;
+        }
+      }
+
+      .tel {
+        display: none;
+
+        @include xl {
+          display: block;
+        }
+      }
+
+      img {
+        padding-top: 0.5rem;
+        height: 80px;
+      }
+    }
+  }
+}

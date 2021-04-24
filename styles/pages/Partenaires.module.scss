@@ -1,8 +1,7 @@
 @import '../fragments/variables';
 
 .partners {
-  @include flex(center, space-between, column, nowrap);
-  grid-area: partners;
+  @include flex(center, center, column, nowrap);
   background-color: $main-color;
   text-align: center;
   height: 100%;
@@ -12,12 +11,13 @@
   h2 {
     margin: 0;
     padding-bottom: 2rem;
+    font-size: 4rem;
   }
 
   .brands {
     @include flex(center, center, row, wrap);
-    height: 70%;
     width: 100%;
+    gap: 4rem;
 
     img {
       height: 100%;

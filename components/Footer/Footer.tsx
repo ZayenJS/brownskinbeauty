@@ -17,8 +17,6 @@ const Footer: FC<FooterProps> = () => {
     else if (prevPage !== '/') className = styles.alternate;
   } else className = styles.original;
 
-  console.log(router);
-
   return (
     <footer className={[styles.footer, className].join(' ')}>
       <span>

@@ -1,13 +1,35 @@
 @import '../../../styles/fragments/variables';
 
 .menu {
-  display: none;
-  margin: 0;
+  position: absolute;
+  top: $header-size / 1.5;
+  left: 0;
+  right: 0;
+  max-height: 0;
+  background-color: lighten($main-color, 20%);
+  overflow: hidden;
+  padding: 0 2rem;
+  transition: all 500ms;
+
+  &.opened {
+    transition: all 500ms;
+    padding: 1rem 2rem;
+    max-height: 14rem;
+  }
 
   @include lg {
     @include flex(center, flex-end, row, wrap);
+    position: static;
     gap: 0 0.5rem;
+    max-height: fit-content;
+    overflow: auto;
     font-size: 1.1rem;
+    background-color: transparent;
+    padding: 0;
+
+    &.opened {
+      padding: 0;
+    }
   }
 
   @include xl {
@@ -56,7 +78,11 @@
     }
 
     &.alternate {
-      color: $main-color;
+      color: $secondary-color;
+
+      @include lg {
+        color: $main-color;
+      }
 
       &:hover,
       &:active {
@@ -69,20 +95,81 @@
     }
 
     &.original {
-      animation: change-link-color 1 $between-page-anim-time reverse forwards;
+      @include lg {
+        animation: change-link-color 1 $between-page-anim-time reverse forwards;
+
+        &:after {
+          border-bottom: 2px solid $secondary-color !important;
+        }
+
+        &:hover,
+        &:active {
+          color: $secondary-color !important;
+        }
+      }
     }
 
     &.changing_from_root {
-      // color: $main-color;
-      animation: change-link-color 1 $between-page-anim-time forwards;
+      @include lg {
+        animation: change-link-color 1 $between-page-anim-time forwards;
 
-      &:hover,
-      &:active {
-        color: $main-color !important;
-
-        @include lg {
+        &:hover,
+        &:active {
           color: $secondary-color !important;
         }
+      }
+    }
+  }
+}
+
+.active {
+  color: $main-color !important;
+
+  @include lg {
+    color: $secondary-color !important;
+  }
+
+  transition: color 200ms ease-in-out, text-shadow 200ms ease-in-out;
+
+  &:after {
+    content: '';
+    transform: scaleX(1) !important;
+    display: flex;
+    padding: 0.1rem 0;
+    border-bottom: 2px solid lighten($main-color, 10%);
+  }
+
+  &:hover,
+  &:active {
+    color: $main-color !important;
+    @include lg {
+      color: lighten($main-color, 25%) !important;
+    }
+  }
+
+  &_alternate {
+    color: $main-color !important;
+
+    @include lg {
+      color: $secondary-color !important;
+    }
+
+    &:after {
+      content: '';
+      transform: scaleX(1) !important;
+      display: flex;
+      padding: 0.1rem 0;
+
+      @include lg {
+        border-bottom: 2px solid $secondary-color !important;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: $main-color !important;
+      @include lg {
+        color: lighten($main-color, 25%) !important;
       }
     }
   }

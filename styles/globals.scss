@@ -2,37 +2,35 @@
 @import './fragments/variables';
 @import './fragments/placeholders';
 
-* {
-  box-sizing: border-box;
-}
-
-html,
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
-  display: grid;
-  grid-template-rows: $header-size auto $footer-size;
-  grid-template-columns: 100%;
-  grid-template-areas:
-    'header'
-    'main'
-    'footer';
   font-family: 'Signika', sans-serif;
   color: $main-color;
   font-size: 1.2rem;
   min-height: 100vh;
-  background: url('../public/images/header-bg.jpg') no-repeat, darken($main-color, 5%);
+  background: url('../assets/images/header-bg.jpg') no-repeat, darken($main-color, 5%);
   background-size: cover;
   background-position: 55% 30%;
   background-attachment: fixed;
+  line-height: 1.25;
+}
+
+#__next {
+  display: grid;
+  grid-template-rows: ($header-size / 1.5) auto $footer-size;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  min-height: 100vh;
+
+  @include lg {
+    grid-template-rows: $header-size auto $footer-size;
+  }
 }
 
 ::selection {
   background-color: lighten($main-color, 20%);
+  color: $secondary-color;
 }
 
 section {
@@ -63,31 +61,10 @@ h1 {
   }
 }
 
-.active {
-  color: $secondary-color !important;
-
-  &:hover,
-  &:active {
-    color: $main-color !important;
-    @include lg {
-      color: lighten($main-color, 25%) !important;
-    }
-  }
-}
-
 .succes {
   color: green;
 }
 
 .error {
   color: red;
-}
-
-main {
-  grid-area: main;
-  height: calc(100vh - 6rem - 5rem);
-}
-
-footer {
-  grid-area: footer;
 }

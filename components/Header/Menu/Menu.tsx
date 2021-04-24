@@ -4,18 +4,21 @@ import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePage } from '../../../store/actions';
 import { State } from '../../../store/reducers';
+import NavLink from '../../NavLink/NavLink';
 
 import styles from './Menu.module.scss';
 
-interface MenuProps {}
+interface MenuProps {
+  isOpen: boolean;
+  close: () => void;
+}
 
-const Menu: FC<MenuProps> = () => {
+const Menu: FC<MenuProps> = ({ isOpen, close }) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  console.log({ router });
-
   const changePrevPage = () => {
+    close();
     dispatch(changePage(router.pathname));
   };
 
@@ -34,36 +37,36 @@ const Menu: FC<MenuProps> = () => {
   }
 
   return (
-    <ul className={styles.menu}>
+    <ul className={[styles.menu, isOpen ? styles.opened : styles.closed].join(' ')}>
       <li onClick={changePrevPage} className={styles.item}>
-        <Link href="/">
+        <NavLink activeClassName={styles.active_alternate} href="/">
           <a className={[styles.link, className].join(' ')}>Accueil</a>
-        </Link>
+        </NavLink>
       </li>
       <li onClick={changePrevPage} className={styles.item}>
-        <Link href="/presentation">
+        <NavLink activeClassName={styles.active} href="/presentation">
           <a className={[styles.link, className].join(' ')}>Présentation</a>
-        </Link>
+        </NavLink>
       </li>
       <li onClick={changePrevPage} className={styles.item}>
-        <Link href="/services">
+        <NavLink activeClassName={styles.active} href="/services">
           <a className={[styles.link, className].join(' ')}>Services</a>
-        </Link>
+        </NavLink>
       </li>
       <li onClick={changePrevPage} className={styles.item}>
-        <Link href="/partenaires">
+        <NavLink activeClassName={styles.active} href="/partenaires">
           <a className={[styles.link, className].join(' ')}>Partenaires</a>
-        </Link>
+        </NavLink>
       </li>
       <li onClick={changePrevPage} className={styles.item}>
-        <Link href="/actualites">
+        <NavLink activeClassName={styles.active} href="/actualites">
           <a className={[styles.link, className].join(' ')}>Actualités</a>
-        </Link>
+        </NavLink>
       </li>
       <li onClick={changePrevPage} className={styles.item}>
-        <Link href="/contact">
+        <NavLink activeClassName={styles.active} href="/contact">
           <a className={[styles.link, className].join(' ')}>Contact</a>
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );
